@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+        <RelativeLayout
+            android:id="@+id/headerView"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="220dp"
+              android:background="#303313"
+              />
+            <TextView
+                android:id="@+id/nav_name"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:gravity="center"
+                android:text="Food Recipe"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:fontFamily="@font/aladin"
+                tools:ignore="MissingConstraints" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSearch"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="#505708"
+                android:layout_below="@+id/nav_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+                <EditText
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:text="search_your_recipes"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_search_primary_light"
+                    android:drawableStart="@drawable/ic_search_primary_light"
+                    android:drawablePadding="10dp"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpagerhead"
+                android:layout_width="match_parent"
+                android:layout_height="166dp"
+                android:layout_below="@+id/cardSearch"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:foregroundGravity="center"
+                android:overScrollMode="never"
+
+                />
+            <include android:id="@+id/shimmerMeal"
+                layout="@layout/item_view_pager_header_shimmer"/>
+            <TextView
+                android:layout_below="@+id/shimmerMeal"
+                android:id="@+id/tittlecategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Meal Categories"
+                android:textSize="19sp"
+                android:textColor="#A32020"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:layout_below="@id/tittlecategories"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="60dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

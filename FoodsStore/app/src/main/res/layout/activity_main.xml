@@ -1,88 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/view_pager"/>
 
-        <TextView
-            android:id="@+id/nav_name"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:gravity="center"
-            android:text="Food Recipe"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            app:fontFamily="@font/aladin"
-            tools:ignore="MissingConstraints" />
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardSearch"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="15dp"
-            app:cardBackgroundColor="#505708"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="0dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:padding="10dp"
-                android:text="search_your_recipes"
-                android:textColor="@color/colorPrimary"
-                android:gravity="center_vertical"
-                android:drawableLeft="@drawable/ic_search_primary_light"
-                android:drawableStart="@drawable/ic_search_primary_light"
-                android:drawablePadding="10dp"
-                />
-
-        </androidx.cardview.widget.CardView>
-
-        <include android:id="@+id/shimmerMeal"
-            layout="@layout/item_view_pager_header_shimmer"/>
-        <TextView
-            android:id="@+id/tittlecategories"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:text="Meal Categories"
-            android:textSize="19sp"
-            android:textColor="#A32020"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none"
-            android:layout_below="@id/tittlecategories"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="50dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginLeft="8dp"
-            />
-            <include android:id="@+id/shimmercategories"
-                layout="@layout/item_recycler_category_shimmer"/>
-
-    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
+        android:id="@+id/bottom_nav_menu"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
+        android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
